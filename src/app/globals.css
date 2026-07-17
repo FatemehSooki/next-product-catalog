@@ -24,3 +24,44 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.skeleton-shine{
+    position:absolute;
+    inset:0;
+    overflow:hidden;
+}
+
+.skeleton-shine::after{
+    content:'';
+    position:absolute;
+    top:0;
+    left:-35%;
+    width:30%;
+    height:100%;
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.08),
+        rgba(255,255,255,.18),
+        rgba(255,255,255,.08),
+        transparent
+    );
+    transform:skewX(-20deg);
+    animation:skeletonShine 5s ease-in-out infinite;
+}
+
+@keyframes skeletonShine{
+
+    0%{
+        left:-35%;
+    }
+
+    15%{
+        left:130%;
+    }
+
+    100%{
+        left:130%;
+    }
+
+}
